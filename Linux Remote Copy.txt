@@ -1,22 +1,25 @@
-One of the Nautilus developers has copied confidential data on the jump host in Stratos DC. That data must be copied to one of the app servers. Because developers do not have access to app servers, they asked the system admins team to accomplish the task for them.
+One of the Nautilus developers has copied confidential data on the jump host in Stratos DC. 
+That data must be copied to one of the app servers. 
+Because developers do not have access to app servers, 
+they asked the system admins team to accomplish the task for them.
 
 
-Copy /tmp/nautilus.txt.gpg file from jump server to App Server 2 at location /home/nfsdata.
+Copy /tmp/nautilus.txt.gpg file from jump server to App Server 2 at location /home/app.
 
 
 JUMP SERVER
 ===========
 
-    1  scp /tmp/nautilus.txt.gpg steve@stapp02:/home/nfsdata/
-    2  ssh steve@stapp02
-    3  scp /tmp/nautilus.txt.gpg steve@stapp02:/home/nfsdata/
+    1  scp /tmp/nautilus.txt.gpg steve@stapp02:/home/app/
+    2  ssh steve@stapp02  password: Am3ric@
+    3  scp /tmp/nautilus.txt.gpg steve@stapp02:/home/app/
    
 APP SERVER
 ==========
-    1  ls -la /home/                           --HERE CHECKED NFSDATA FOLDER OWNER  AND IN NEXT STEP CHANGED TO STEVE AS OWNER 
+    1  ls -la /home/                          --HERE CHECKED APP FOLDER OWNER AND IN NEXT STEP CHANGED TO STEVE AS OWNER 
     2  sudo chown -R steve:steve /home/
     3  ls -la /home/
-    4  cd /home/nfsdata/
+    4  cd /home/app
     5  ls
  
 
