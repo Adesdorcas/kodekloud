@@ -1,0 +1,25 @@
+There was some users data copied on Nautilus App Server 1 at /home/usersdata location 
+by the Nautilus production support team in Stratos DC. 
+Later they found that they mistakenly mixed up different user data there. 
+Now they want to filter out some user data and copy it to another location. Find the details below:
+
+
+==== TASK 1 ====
+On App Server 1 find all files (not directories) owned by user anita inside /home/usersdata 
+directory and copy them all while keeping the folder structure (preserve the directories path) 
+to /news directory.
+
+
+==== SOLUTION ====
+1 ssh tony@stapp01
+2 enter password
+3 sudo su -      (change to root)
+4 cd /home/usersdata, ll   -   list the files present
+5 cd ...
+6 enter the following:   find /home/usersdata -user anita | xargs cp --parents -t /news
+7 cd ..
+8 cd /news  -   check if directory has been created
+9 ll        -   check the content
+10 cd /home   -   you will see all content copied
+
+VOILLA YOU ARE DONE !!!!
