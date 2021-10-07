@@ -29,5 +29,6 @@ Note :
 ======
 
 	 1) everbody knows first we have to switch into app server 3 as per question
-	 2) In this class i learnt how to delete a user command is (userdel -r USERNAME) , and also i remembered how to change ownership once again...
+	 2) In this class i learnt how to delete a user command is (userdel -r USERNAME), 
+    and also i remembered how to change ownership once again...
 
